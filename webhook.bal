@@ -12,7 +12,7 @@ service asgardeo:RegistrationService on webhookListener {
     remote function onAddUser(asgardeo:AddUserEvent event ) returns error? {
         
         log:printInfo(event.toJsonString());
-        log:printInfo("Hello World")
+        log:printInfo("Hello World");
     }
     
     remote function onConfirmSelfSignup(asgardeo:GenericEvent event ) returns error? {
