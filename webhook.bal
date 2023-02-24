@@ -12,18 +12,21 @@ service asgardeo:RegistrationService on webhookListener {
     remote function onAddUser(asgardeo:AddUserEvent event ) returns error? {
         
         log:printInfo(event.toJsonString());
+        log:printInfo(event.eventData.organizationName());
         log:printInfo("User has been added");
     }
     
     remote function onConfirmSelfSignup(asgardeo:GenericEvent event ) returns error? {
         
         log:printInfo(event.toJsonString());
+        log:printInfo(event.eventData.organizationName());
         log:printInfo("Self sign up confirmed");
     }
     
     remote function onAcceptUserInvite(asgardeo:GenericEvent event ) returns error? {
         
         log:printInfo(event.toJsonString());
+        log:printInfo(event.eventData.organizationName());
         log:printInfo("User Invite accepted");
     }
 }
